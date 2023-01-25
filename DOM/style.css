@@ -1,0 +1,20 @@
+.errorr {
+    color: red;
+    background-color: black;
+    margin: 20px;
+    padding: 30px;
+}
+
+.success {
+    color: green;
+    background-color: bisque;
+    margin: 20px;
+    padding: 30px;
+}
+
+.none {
+    color: orange;
+    background-color: orangered;
+    margin: 20px;
+    padding: 30px;
+}
