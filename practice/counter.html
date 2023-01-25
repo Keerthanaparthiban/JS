@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="number" id="count" name="counter" value="0">
+    <button id="buttoncont" onclick="submitbtn()">Submit</button>
+    <script>
+        let val = document.getElementById('count').value;
+
+        function submitbtn() {
+            let counter = ++val;
+            document.getElementById('count').value = counter;
+            console.log(counter)
+        }
+        
+    </script>
+</body>
+</html>
