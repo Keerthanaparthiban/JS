@@ -142,3 +142,35 @@ getTodos((err, data) => {
 
 console.log(3)
 console.log(4)
+
+// callback asyn function
+
+console.log('first')
+console.log('second')
+
+const goProducts = (callback) => {
+    const req = new XMLHttpRequest();
+
+    req.addEventListener('readystatechange', () => {
+        if(req.readyState === 4 && req.status === 200) {
+            callback(undefined, req.responseText);
+        } else if(req.readyState === 4) {
+            callback('could not fetch data', undefined);
+        }
+    });
+
+    req.open('GET', 'https://dummyjson.com/products/');
+    req.send();
+};
+
+//callbackfn
+goProducts((err,data) => {
+    if(err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+})
+
+console.log('third')
+console.log('fourth')
