@@ -1,0 +1,20 @@
+[
+    {
+        "text": "Hello world!",
+        "author": "jane austen",
+        "points": 50,
+        "eligible": true
+    },
+    {
+        "text": "Jojo",
+        "author": "ginger",
+        "points": 10,
+        "eligible": false
+    },
+    {
+        "text": "Max mad",
+        "author": "justin",
+        "points": 10,
+        "eligible": true
+    }
+]

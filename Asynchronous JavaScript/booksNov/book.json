@@ -1,0 +1,6 @@
+[
+    {"bookName": "Pride & Prejudice", "author": "jane austen", "rating": 5, "popular": true},
+    {"bookName": "Seven Husbands of Evelyn Hugo", "author": "Taylor Jenkins reid", "rating": 3, "popular": true},
+    {"bookName": "Call me by your name", "author": "Andre aciman", "rating": 2, "popular": false},
+    {"bookName": "False Impression", "author": "Jeffrey Archer", "rating": 1, "popular": false}
+]

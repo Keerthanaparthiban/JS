@@ -1,0 +1,8 @@
+[
+    {"genre": "Romance", "demand": 100},
+    {"genre": "Supernatural", "demand": 10},
+    {"genre": "Classic", "demand": 50},
+    {"genre": "Crime thriller", "demand": 20},
+    {"genre": "Contemporary romance", "demand": 60},
+    {"genre": "Historic", "demand": 90}
+]

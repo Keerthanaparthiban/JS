@@ -174,3 +174,35 @@ goProducts((err,data) => {
 
 console.log('third')
 console.log('fourth')
+
+// Asynchronous JavaScript Tutorial #5 - Using JSON Data
+
+// json is strings that look like js objects. when a browser exchanges data with a server it should be in text format so thereby JSON
+// turning the response into a array of js objects 
+// JSON.parse() - takes a json string and converts it into javascript objects
+
+const reque = new XMLHttpRequest();
+
+const recall = (callback) => {
+    reque.addEventListener('readystatechange', () => {
+        console.log(reque, reque.responseText)
+        if(reque.readyState === 4 && reque.status === 200) {
+            const data = JSON.parse(reque.responseText)
+            callback(undefined, data)
+        } else if(reque.readyState === 4) {
+            callback('could not fetch the products', undefined)
+        }
+    });
+
+    reque.open('GET', 'todos.json');
+    reque.send();
+};
+
+recall((err, data) => {
+    if(err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+})
+
