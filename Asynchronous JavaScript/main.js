@@ -21,7 +21,7 @@ console.log(3);
 // // this is a async function. it doesnt block the code. The callback function will execute after 2.5s meanwhile the other statements (console log statements gets executed)
 setTimeout(() => {
     console.log('callback function fired')
-}, 2500); //milliseconds 
+}, 1000); //milliseconds 
 
 console.log(4);
 console.log(5);
@@ -43,7 +43,7 @@ const request = new XMLHttpRequest(); // js object to send a request
 
 request.addEventListener('readystatechange', () => {
     if(request.readyState === 4 && request.status === 200) {
-        console.log(request.responseText) // contains the response data //fires only when the readystate is 4 and status is ok
+        console.log(request, request.responseText) // contains the response data //fires only when the readystate is 4 and status is ok
     } else if (request.readyState === 4) {
         console.log('could not fetch data')
     }
@@ -101,3 +101,44 @@ request.send(); // head to browser -> network panel refresh -> req is made
 // client error requests - 400 bad request, 401 unauthorized, 403 forbidden 404 not found
 
 // 500 - server side req - not an error on our side but the server side
+
+// Asynchronous JavaScript Tutorial #4 - Callback Functions
+
+// making it reusable - passing the entire http req inside a function and call it any numnber of times
+
+const getTodos = (callback) => {
+    const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange', () => {
+        if(request.readyState === 4 && request.status === 200) {
+            callback(undefined, request.responseText); // console.log(request.responseText)
+        } else if (request.readyState === 4) {
+            callback('could not fetch data', undefined); //console.log('Something is wrong') //no data so undefined // could not fetch for error message
+        }
+    })
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.send();
+}
+
+// can be called n number of times
+// getTodos();
+// getTodos();
+// getTodos();
+
+console.log(1)
+console.log(2)
+
+// specifying a callback fn. function inside a calling function
+// pass two arguments into the callback fn - conventions - error first, so err and data
+getTodos((err, data) => {
+    console.log('callback fired')
+    // console.log(err, data)
+    if(err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); // the callback function
+
+
+console.log(3)
+console.log(4)
