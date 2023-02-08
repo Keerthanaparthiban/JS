@@ -178,7 +178,7 @@ console.log('fourth')
 // Asynchronous JavaScript Tutorial #5 - Using JSON Data
 
 // json is strings that look like js objects. when a browser exchanges data with a server it should be in text format so thereby JSON
-// turning the response into a array of js objects 
+// turning the response into an array of js objects 
 // JSON.parse() - takes a json string and converts it into javascript objects
 
 const reque = new XMLHttpRequest();
